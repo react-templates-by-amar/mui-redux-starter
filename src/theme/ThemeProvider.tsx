@@ -2,15 +2,15 @@ import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { useThemeStore } from '@/store/useThemeStore';
 import { lightThemeInstance, darkThemeInstance } from './index';
+import { useAppSelector } from '../redux/store';
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const { isDark } = useThemeStore();
+  const isDark = useAppSelector((state) => state.theme.isDark);
   
   // Apply theme class on initial render
   useEffect(() => {

@@ -1,11 +1,13 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Modal } from '@components/ui';
 import { useToggle } from '@/hooks';
+import { CounterDemo } from '@/components/CounterDemo';
 import { 
   Typography, 
   Button, 
   Stack, 
-  Box 
+  Box, 
+  Divider
 } from '@mui/material';
 
 const Home = () => {
@@ -39,6 +41,11 @@ const Home = () => {
           Open Test Modal
         </Button>
       </Stack>
+      
+      <Divider sx={{ my: 4 }} />
+      
+      {/* Redux Counter Demo */}
+      <CounterDemo />
 
       <Modal
         isOpen={isModalOpen}
