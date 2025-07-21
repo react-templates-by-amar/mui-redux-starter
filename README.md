@@ -1,6 +1,6 @@
-# React + Material UI + Zustand Template
+# React + Material UI + Redux Toolkit Template
 
-A modern, lightweight React starter template with Material UI for styling and Zustand for state management. This template provides a clean, organized structure to kickstart your React projects with best practices.
+A modern, lightweight React starter template with Material UI for styling and Redux Toolkit for state management. This template provides a clean, organized structure to kickstart your React projects with best practices.
 
 ## 📚 Documentation
 
@@ -11,7 +11,7 @@ For detailed documentation on available hooks, components, and state management,
 - ⚡️ **Vite** — Lightning fast development and build
 - 🔄 **React 18** with TypeScript
 - 🎨 **Material UI** — Complete design system with ready-to-use components
-- 🗃️ **Zustand** — Simple, fast state management
+- 🗃️ **Redux Toolkit** — Efficient state management with Redux best practices
 - 🌓 **Dark Mode** — Built-in dark mode support with Material UI themes
 - 🌐 **API Client** — Axios setup with interceptors and typed service pattern
 - ⚙️ **Environment Config** — Type-safe access to environment variables
@@ -27,7 +27,7 @@ For detailed documentation on available hooks, components, and state management,
 
 ```bash
 # Clone the template
-npx degit react-templates-by-amar/mui-zustand-starter
+npx degit react-templates-by-amar/mui-redux-starter
 
 # Install dependencies
 npm install
@@ -40,7 +40,7 @@ npm run dev
 
 ```bash
 # Clone the repository
-git clone https://github.com/react-templates-by-amar/mui-zustand-starter.git
+git clone https://github.com/react-templates-by-amar/mui-redux-starter.git
 
 
 # Remove git history
@@ -64,7 +64,7 @@ npm run dev
 │   │   ├── modals/       # Modal components
 │   │   └── ...          # Other feature components
 │   ├── hooks/           # Custom React hooks
-│   ├── store/           # Zustand store definitions
+│   ├── redux/           # Redux state management
 │   ├── theme/           # Material UI theme configuration
 │   ├── styles/          # Global styles
 │   ├── types/           # TypeScript type definitions
@@ -124,7 +124,7 @@ const darkTheme: ThemeOptions = {
 
 ### State Management
 
-Zustand stores are located in the `src/store` directory. The template includes a basic counter store as an example.
+Redux state management is located in the `src/redux` directory. The template includes slice-based organization with examples for counter and theme state.
 
 ## Available Scripts
 

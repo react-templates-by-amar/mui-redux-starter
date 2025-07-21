@@ -28,7 +28,7 @@ const About = () => {
           <ListItemText primary="Material UI for styling" />
         </ListItem>
         <ListItem disablePadding>
-          <ListItemText primary="Zustand for state management" />
+          <ListItemText primary="Redux Toolkit for state management" />
         </ListItem>
         <ListItem disablePadding>
           <ListItemText primary="Axios for HTTP requests" />

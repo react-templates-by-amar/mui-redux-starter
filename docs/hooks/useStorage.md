@@ -52,15 +52,17 @@ An array with:
 2. `setValue` (function): Function to update the stored value
 3. `removeValue` (function): Function to remove the value from storage
 
-## Example: Theme Switcher with Material UI and Zustand
+## Example: Theme Switcher with Material UI and Redux
 
 ```typescript
-import { useThemeStore } from '@/store/useThemeStore';
+import { useAppDispatch, useAppSelector } from '@/redux/store';
+import { toggle } from '@/redux/slices/themeSlice';
 import { FormControl, InputLabel, Select, MenuItem, Typography, Box } from '@mui/material';
 
 function ThemeSwitcher() {
-  // Our theme store already uses Zustand persist middleware for localStorage
-  const { isDarkMode, toggleDarkMode } = useThemeStore();
+  // Our theme slice already handles localStorage persistence
+  const isDark = useAppSelector((state) => state.theme.isDark);
+  const dispatch = useAppDispatch();
   
   return (
     <Box sx={{ p: 2 }}>
@@ -70,12 +72,12 @@ function ThemeSwitcher() {
         <Select
           labelId="theme-select-label"
           id="theme-select"
-          value={isDarkMode ? 'dark' : 'light'}
+          value={isDark ? 'dark' : 'light'}
           label="Theme"
           onChange={(e) => {
-            if ((e.target.value === 'dark' && !isDarkMode) ||
-                (e.target.value === 'light' && isDarkMode)) {
-              toggleDarkMode();
+            if ((e.target.value === 'dark' && !isDark) ||
+                (e.target.value === 'light' && isDark)) {
+              dispatch(toggle());
             }
           }}
         >
@@ -84,7 +86,7 @@ function ThemeSwitcher() {
         </Select>
       </FormControl>
       
-      <Typography>Current theme: {isDarkMode ? 'dark' : 'light'}</Typography>
+      <Typography>Current theme: {isDark ? 'dark' : 'light'}</Typography>
       <Typography variant="body2" color="text.secondary">
         This preference will be remembered across page refreshes.
       </Typography>
